@@ -12,7 +12,7 @@ import { useGLTF, useTexture } from "@react-three/drei";
 import useMacbookStore from "../../store";
 import { useEffect } from "react";
 import { noChangeParts } from "../../constants";
-import { Color } from "three";
+import { Color, SRGBColorSpace } from "three";
 
 export default function MacbookModel16(props) {
   const { nodes, materials, scene } = useGLTF("/models/macbook-16-transformed.glb");
@@ -30,6 +30,8 @@ export default function MacbookModel16(props) {
   }, [color, scene]);
 
   const texture = useTexture("/screen.png");
+  texture.colorSpace = SRGBColorSpace;
+  texture.needsUpdate = true;
 
   return (
     <group {...props} dispose={null}>
