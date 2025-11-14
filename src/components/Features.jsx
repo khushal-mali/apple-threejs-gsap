@@ -4,7 +4,7 @@ import { features, featureSequence } from "../constants/index.js";
 import clsx from "clsx";
 import { Suspense, useEffect, useRef } from "react";
 import { Html } from "@react-three/drei";
-// import MacbookModel from "./models/Macbook.jsx";
+import MacbookModel from "./models/Macbook.jsx";
 import { useMediaQuery } from "react-responsive";
 import useMacbookStore from "../store/index.js";
 import { useGSAP } from "@gsap/react";
@@ -89,7 +89,7 @@ const ModelScroll = () => {
           </Html>
         }
       >
-        {/* <MacbookModel scale={isMobile ? 0.05 : 0.08} position={[0, -1, 0]} /> */}
+        <MacbookModel scale={isMobile ? 0.05 : 0.08} position={[0, -1, 0]} />
       </Suspense>
     </group>
   );
